@@ -2,7 +2,6 @@ document.addEventListener(`click`, e => {
     const origin = e.target.closest(`a`);
     var targetUrl = new URL(origin.href)
     if (origin && location.hostname != targetUrl.hostname) {
-        alert(`You clicked ${origin.href}`)
         $.ajax({
             type: "POST",
             url: "https://select-software-reviews.bubbleapps.io/version-test/api/1.1/wf/trackclicks",
