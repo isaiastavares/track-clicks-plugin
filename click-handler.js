@@ -4,14 +4,14 @@ document.addEventListener(`click`, e => {
     if (origin && location.hostname != targetUrl.hostname) {
         $.ajax({
             type: "POST",
-            url: "https://select-software-reviews.bubbleapps.io/version-test/api/1.1/wf/trackclicks",
+            url: "https://select-software-reviews.bubbleapps.io/version-live/api/1.1/wf/trackclicks",
             data: JSON.stringify({ "url": origin.href }),
             contentType: "application/json",
             success: function (result) {
                 console.log(result);
             },
             error: function (result, status) {
-                console.log(result);
+                alert(result)
             }
         });
     }
