@@ -3,9 +3,18 @@ document.addEventListener(`click`, e => {
     const targetUrl = new URL(origin.href)
     if (origin && location.hostname != targetUrl.hostname) {
         var ip = ""
-        $.getJSON("https://api.ipify.org?format=json", function(data) {
-            ip = data.ip
-        })
+        $.ajax({
+            type : "GET",
+            url : "https://api.ipify.org?format=json",
+            crossDomain: true,
+            contentType: "application/json",
+            success: function (result) {
+                ip = result.ip
+            },
+            error: function (result, status) {
+                alert(result)
+            }
+        });
         alert(ip)
         $.ajax({
             type: "POST",
