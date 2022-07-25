@@ -6,6 +6,7 @@ document.addEventListener(`click`, e => {
             type: "POST",
             url: "https://select-software-reviews.bubbleapps.io/version-live/api/1.1/wf/trackclicks",
             data: JSON.stringify({ "url": origin.href }),
+            crossDomain: true,
             contentType: "application/json",
             success: function (result) {
                 console.log(result);
