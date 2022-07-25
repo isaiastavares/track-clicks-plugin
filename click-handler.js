@@ -8,6 +8,8 @@ document.addEventListener(`click`, e => {
             crossDomain: true,
             contentType: "application/json",
             success: function (result) {
+                console.log(`IP: ${result.ip}`);
+                alert(result);
                 eventClick(origin.href, result.ip)
             },
             error: function (result, status) {
