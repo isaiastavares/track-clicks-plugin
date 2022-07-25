@@ -1,9 +1,10 @@
 document.addEventListener(`click`, e => {
     const origin = e.target.closest(`a`);
-    var targetUrl = new URL(origin.href)
+    const targetUrl = new URL(origin.href)
     if (origin && location.hostname != targetUrl.hostname) {
+        var ip = ""
         $.getJSON("https://api.ipify.org?format=json", function(data) {
-            const ip = data.ip
+            ip = data.ip
         })
         alert(ip)
         $.ajax({
