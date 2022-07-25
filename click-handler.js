@@ -22,11 +22,12 @@ function eventClick(url, ip) {
     $.ajax({
         type: "POST",
         url: "https://select-software-reviews.bubbleapps.io/version-live/api/1.1/wf/trackclicks",
-        data: JSON.stringify({ "url": origin.href, "ip": ip }),
+        data: JSON.stringify({ "url": url, "ip": ip }),
         crossDomain: true,
         contentType: "application/json",
         success: function (result) {
             console.log(result);
+            console.log(`Url: ${url}, IP: ${ip}`);
         },
         error: function (result, status) {
             console.log(result);
