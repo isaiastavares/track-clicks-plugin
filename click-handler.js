@@ -9,7 +9,7 @@ document.addEventListener(`click`, e => {
             contentType: "application/json",
             success: function (result) {
                 console.log(`IP: ${result.ip}`);
-                alert(result);
+                alert(result.ip);
                 eventClick(origin.href, result.ip)
             },
             error: function (result, status) {
