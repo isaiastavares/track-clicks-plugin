@@ -8,11 +8,10 @@ document.addEventListener(`click`, e => {
             crossDomain: true,
             contentType: "application/json",
             success: function (result) {
-                console.log(result)
                 eventClick(origin.href, result.ip)
             },
             error: function (result, status) {
-                alert(result)
+                console.log(result);
                 eventClick(origin.href, null)
             }
         });
@@ -30,7 +29,7 @@ function eventClick(url, ip) {
             console.log(result);
         },
         error: function (result, status) {
-            alert(result)
+            console.log(result);
         }
     });
 }
