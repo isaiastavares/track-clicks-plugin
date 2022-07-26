@@ -28,7 +28,6 @@ function eventClick(url, ip) {
         contentType: "application/json",
         success: function (result) {
             console.log(result);
-            console.log(`Data: ${JSON.stringify({ "url": url, "ip": ip })}`)
         },
         error: function (result, status) {
             console.log(result);
