@@ -6,11 +6,10 @@ document.addEventListener(`click`, e => {
             type : "GET",
             url : "https://api.ipify.org?format=json",
             crossDomain: true,
-            dataType: "jsonp",
             contentType: "application/json",
             success: function (result) {
                 const data = JSON.parse(result);
-                console.log(`IP: ${data.ip}`);
+                console.log(`Data: ${data}`);
                 alert(data.ip);
                 eventClick(origin.href, data.ip)
             },
