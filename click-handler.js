@@ -9,9 +9,10 @@ document.addEventListener(`click`, e => {
             dataType: "jsonp",
             contentType: "application/json",
             success: function (result) {
-                console.log(`IP: ${result.ip}`);
-                alert(result.ip);
-                eventClick(origin.href, result.ip)
+                const data = JSON.parse(result);
+                console.log(`IP: ${data.ip}`);
+                alert(data.ip);
+                eventClick(origin.href, data.ip)
             },
             error: function (result, status) {
                 console.log(result);
