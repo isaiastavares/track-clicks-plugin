@@ -9,8 +9,6 @@ document.addEventListener(`click`, e => {
             contentType: "application/json",
             success: function (result) {
                 const data = JSON.parse(result);
-                console.log(`Data: ${data}`);
-                alert(data.ip);
                 eventClick(origin.href, data.ip)
             },
             error: function (result, status) {
@@ -30,7 +28,6 @@ function eventClick(url, ip) {
         contentType: "application/json",
         success: function (result) {
             console.log(result);
-            console.log(`Url: ${url}, IP: ${ip}`);
         },
         error: function (result, status) {
             console.log(result);
