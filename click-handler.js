@@ -8,7 +8,7 @@ document.addEventListener(`click`, e => {
             crossDomain: true,
             contentType: "application/json",
             success: function (result) {
-                const data = JSON.parse(result);
+                const data = JSON.parse(JSON.stringify(result))
                 eventClick(origin.href, data.ip)
             },
             error: function (result, status) {
